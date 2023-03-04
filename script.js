@@ -11,12 +11,13 @@ guessBtn.addEventListener('click', guessFrogs)
 resetBtn.addEventListener('click', reset)
 
 function guessFrogs() {
-    numGuessed.textContent = `You guessed ${guess.value} frogs`
+    guess.value > 1 ? numGuessed.textContent = `You guessed ${guess.value} frogs` 
+    : numGuessed.textContent = `You guessed ${guess.value} frog`
 
     setTimeout(() => {
         frogs.innerHTML = displayFrogs()
         resetBtn.hidden = false
-    }, 2000)
+    }, 1000)
 }
 
 function getRandomFrogs() {
